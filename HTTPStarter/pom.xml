@@ -12,7 +12,7 @@
   <packaging>bwear</packaging>
   <properties>
     <project.type>None</project.type>
-    <bw.Home>BW6WithMaven</bw.Home>
+    <bw.Home>\bw\6.8</bw.Home>
     <skipTests>false</skipTests>
     <failIfNoTests>false</failIfNoTests>
     <tibco.Home>D:\BW6WithMaven</tibco.Home>

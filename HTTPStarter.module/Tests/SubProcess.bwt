@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/HTTPStarter.module/Tests/SubProcess.bwt">
+  <ProcessNode Id="httpstarter.module.TestProcess" Name="httpstarter.module.TestProcess" ModelType="BW" moduleName="HTTPStarter.module">
+    <Assertion Id="92176fd5-2d7f-4c70-9bc3-87bb4f0bf65b" Name="End" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1667818458491&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$End-input/tns:message='Haider'&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1667818458491&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template name=&quot;End&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;string>&lt;testInput>&lt;xsl:value-of select=&quot;$End-input/tns:message&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;&amp;quot;Haider&amp;quot;&quot;/>&lt;/goldInput>&lt;/string>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="httpstarter.module.TestProcess">
+      <Inputs Id="d83dc862-e1fe-4c88-831c-0a5fe56348ccHTTPStarter.module_httpstarter.module.TestProcess_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS" inputFile="">
+        <informations Name="input" nameSpace="http://www.example.com/namespaces/tns/1667818378044">
+          <nameSpaces prefix="tns" nameSapce="http://www.example.com/namespaces/tns/1667818378044"/>
+          <Parameter Name="tns:Element">
+            <parameters Name="tns:name" Value="Haider" type="string" nameSpace="http://www.example.com/namespaces/tns/1667818378044"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1667818378044' >&lt;tns:name>Haider&lt;/tns:name>&lt;/tns:Element>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>
