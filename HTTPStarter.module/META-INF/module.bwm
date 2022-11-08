@@ -21,10 +21,11 @@
   <sca:property xmi:id="_48n_MF6JEe2hMffipBYuOg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_48n_MV6JEe2hMffipBYuOg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_48uF0F6JEe2hMffipBYuOg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SW2t4F86Ee2hMffipBYuOg" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:component xmi:id="_4kqLIF6JEe2hMffipBYuOg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4kwRwF6JEe2hMffipBYuOg" processName="httpstarter.module.Process"/>
     <sca:service xmi:id="_mizSwF6KEe2hMffipBYuOg" name="resource">
-      <sca:interface.wsdl xmi:id="_mizSwV6KEe2hMffipBYuOg" interface="http://xmlns.example.com/20221107161939PLT#wsdl.interface(resource)" scaext:wsdlLocation="../Processes/httpstarter/module/Process.bwp"/>
+      <sca:interface.wsdl xmi:id="_mizSwV6KEe2hMffipBYuOg" interface="http://xmlns.example.com/20221107161939PLT#wsdl.interface(resource)"/>
     </sca:service>
   </sca:component>
 </sca:composite>
