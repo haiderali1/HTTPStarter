@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/HTTPStarter.module/Service Descriptors/httpstarter.module.Process-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1667818378044"
+    },
+    {
+        "jsonSchemaLocation": "/HTTPStarter.module/Service Descriptors/httpstarter.module.Process-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1667818458491"
+    }
+]}
