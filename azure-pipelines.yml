@@ -10,7 +10,7 @@ pool:
   name: Default
 
 steps:
-- script: python C:\agent\custom_folder_script\mypy.py 
+- script: python C:\agent\custom_folder_script\mypy.py $(Build.Repository.Name)
   displayName: 'Run a one-line script'
 
 - script: |
