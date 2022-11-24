@@ -7,10 +7,10 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: BCTCL-DL342026
 
 steps:
-- script: echo Hello, world!
+- script: python C:\agent\custom_folder_script\mypy.py 
   displayName: 'Run a one-line script'
 
 - script: |
