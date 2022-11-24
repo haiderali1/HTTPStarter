@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: BCTCL-DL342026
+  name: Default
 
 steps:
 - script: python C:\agent\custom_folder_script\mypy.py 
