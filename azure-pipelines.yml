@@ -19,5 +19,5 @@ steps:
   displayName: 'Run a multi-line script'
 
 - publish: '$(Build.ArtifactStagingDirectory)/*'
-    displayName: 'Publish script'
-    artifact: EAR
+  displayName: 'Publish script'
+  artifact: EAR
