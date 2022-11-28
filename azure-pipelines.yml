@@ -21,3 +21,12 @@ steps:
 - publish: '$(Build.ArtifactStagingDirectory)\EAR'
   displayName: 'Publish script'
   artifact: EAR
+
+- task: UniversalPackages@0
+  displayName: Artifact Publish
+  inputs:
+    command: publish
+    publishDirectory: '$(Build.ArtifactStagingDirectory)\EAR'
+    vstsFeedPublish: 'MyFirstProject/earFeed'
+    vstsFeedPackagePublish: 'EAR_$System.JobId'
+    packagePublishDescription: 'The EAR Description'
