@@ -14,7 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Was it a Success.
+    echo Was it a Success with pipeline id $(System.PlanId).
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
@@ -28,5 +28,5 @@ steps:
     command: publish
     publishDirectory: '$(Build.ArtifactStagingDirectory)\EAR'
     vstsFeedPublish: 'MyFirstProject/earFeed'
-    vstsFeedPackagePublish: ear-http-starter-01
+    vstsFeedPackagePublish: ear-http-starter-$(System.PlanId)
     packagePublishDescription: 'The EAR Description'
