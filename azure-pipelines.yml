@@ -28,5 +28,5 @@ steps:
     command: publish
     publishDirectory: '$(Build.ArtifactStagingDirectory)\EAR'
     vstsFeedPublish: 'MyFirstProject/earFeed'
-    vstsFeedPackagePublish: 'EAR_$System.JobId'
+    vstsFeedPackagePublish: EAR_HTTPSTARTER
     packagePublishDescription: 'The EAR Description'
