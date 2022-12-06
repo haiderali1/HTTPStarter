@@ -761,6 +761,9 @@
         <bpws:variable element="ns1:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:Element" name="CallProcess-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:Element" name="CallProcess" sca-bpel:internal="true"/>
+        <bpws:variable name="mypop" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/mygroup/myprop" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -793,10 +796,10 @@
                                 tibex:xpdlId="6ea1062a-3f4b-41f9-88d6-4ff64a357ae5" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20221107161939PLT&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1667818378044&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1667818458491&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CallProcess&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Element>&#xa;            &lt;tns3:message>&#xa;                &lt;xsl:value-of select=&quot;concat($CallProcess/tns3:message, &amp;quot; is the name&amp;quot;)&quot;/>&#xa;            &lt;/tns3:message>&#xa;        &lt;/tns3:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20221107161939PLT&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1667818458491&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CallProcess&quot;/>&#xa;    &lt;xsl:param name=&quot;mypop&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:Element>&#xa;            &lt;tns3:message>&#xa;                &lt;xsl:value-of select=&quot;concat($CallProcess/tns3:message, &amp;quot; is the name and prop is &amp;quot;,$mypop)&quot;/>&#xa;            &lt;/tns3:message>&#xa;        &lt;/tns3:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20221107161939PLT" xmlns:tns1="http://www.example.com/namespaces/tns/1667818378044" xmlns:tns3="http://www.example.com/namespaces/tns/1667818458491" version="2.0"&gt;&lt;xsl:param name="CallProcess"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;item&gt;&lt;tns3:Element&gt;&lt;tns3:message&gt;&lt;xsl:value-of select="concat($CallProcess/tns3:message, &amp;quot; is the name&amp;quot;)"/&gt;&lt;/tns3:message&gt;&lt;/tns3:Element&gt;&lt;/item&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20221107161939PLT" xmlns:tns3="http://www.example.com/namespaces/tns/1667818458491" version="2.0"&gt;&lt;xsl:param name="CallProcess"/&gt;&lt;xsl:param name="mypop"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;item&gt;&lt;tns3:Element&gt;&lt;tns3:message&gt;&lt;xsl:value-of select="concat($CallProcess/tns3:message, &amp;quot; is the name and prop is &amp;quot;,$mypop)"/&gt;&lt;/tns3:message&gt;&lt;/tns3:Element&gt;&lt;/item&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="CallProcessTopostOut"/>
                                 </bpws:targets>
