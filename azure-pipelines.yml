@@ -1,4 +1,10 @@
 # Starter pipeline
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'Free Trial(02f0e468-f8d5-41ed-b7ef-da557e4b2995)'
+    KeyVaultName: 'haider-vault'
+    SecretsFilter: '*'
+    RunAsPreJob: true
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -22,6 +28,15 @@ steps:
   displayName: 'Publish script'
   artifact: EAR
 
+- task: CmdLine@2
+  inputs:
+    script: 'echo $(Password) > secret.txt'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: secret.txt
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    
 - task: UniversalPackages@0
   displayName: Artifact Publish
   inputs:
